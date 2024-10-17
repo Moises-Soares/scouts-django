@@ -76,9 +76,19 @@ WSGI_APPLICATION = 'scoutsutils.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'mssql',
+        'NAME': 'scouts',
+        'USER': 'adminscouts',
+        'PASSWORD': 'skdjhfFDDDFV@22334',
+        'HOST': 'scouts.database.windows.net',
+        'PORT': '1433',
+
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'encrypt': True,
+            'trust_server_certificate': False,  # Change to True if using self-signed certificates
+        },
+    },
 }
 
 
